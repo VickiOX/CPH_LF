@@ -1,0 +1,50 @@
+---
+import "../css/style.css";
+import TelephoneNr from "./TelephoneNr.astro";
+import Email from "./Email.astro";
+---
+
+<article class="full_screen">
+    <h3>KONTAKT</h3>
+    <TelephoneNr/>
+    <Email/>
+</article>
+
+<article class="small_screen">
+    <img src="../../phone-call.png" alt="telefon icon">
+    <img src="../../mail.png" alt="mail icon">
+</article>
+
+
+<style>
+
+    .full_screen{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .small_screen{
+        display: none
+    }
+
+    img{
+        max-height: 25px;
+    }
+
+    @media screen and (max-width: 800px){
+        .full_screen{
+        display: none
+    }
+
+    .small_screen{
+        display: flex;
+        gap: 10px;
+    }
+
+    img{
+        max-height: 30px;
+    }
+
+    }
+
+</style>

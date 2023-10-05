@@ -1,0 +1,35 @@
+---
+import "../css/style.css";
+import SomeIconer from "./SomeIconer.astro";
+---
+
+<article>
+    <h3>ADRESSE</h3>
+    <p>Toldbodgade 39</p>
+    <p>1253 København K</p>
+    <p>DK, Danmark</p>
+    <div>
+        <SomeIconer/>
+    </div>
+</article>
+
+
+<style>
+
+    article{
+        display: flex;
+        flex-direction: column;
+    }
+
+    p{
+        margin:0;
+        padding: 0;
+    }
+
+    @media screen and (max-width: 800px){
+        h3, div{
+            display: none;
+        }
+    }
+
+</style>
