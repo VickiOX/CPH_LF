@@ -10,16 +10,14 @@ const {img, title, text} = Astro.props;
 
   <div class="text">
         <h2>{title}</h2>
-    <p>{text}</p>
+        <p>{text}</p>
     </div>
 </article>
 
+
 <style>
 
-img {
- width: 181.5%;
- margin-left: 5rem;
-}    
+
 
 article {
     display: grid;
@@ -30,12 +28,15 @@ article {
       box-sizing: border-box; 
       border-radius: 10px;
       background: #181818;
-      height: 343px;
+      height: 320px;
       width: 850px;
       flex-shrink: 0;
 }
 
-
+img {
+ width: 170%;
+ margin-left: 5rem;
+}    
 .text {
     margin-top: -2rem;
     margin-left: 4rem;
