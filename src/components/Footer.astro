@@ -1,0 +1,30 @@
+---
+import "../css/style.css";
+import Adress from "./Adress.astro";
+import Contact from "./Contact.astro";
+import Newsletter from "./Newsletter.astro";
+---
+
+<article>
+    <Adress/>
+    <Contact/>
+    <Newsletter/>
+</article>
+
+
+<style>
+    article{
+        display: flex;
+        background-color: #181818;
+        justify-content: space-around;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    @media screen and (max-width: 800px){
+        article{
+            align-items: center;
+        }
+    }
+
+</style>

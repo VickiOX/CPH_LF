@@ -1,0 +1,30 @@
+---
+import "../css/style.css";
+import Nav from "./Nav.astro";
+---
+
+<article>
+    <img src="../../clf_logo.png" alt="Copenhagen light festival logo">
+    <Nav/>
+</article>
+
+
+<style>
+
+    article{
+        display: flex;
+        background-color: #181818;
+        padding: 10px;
+        justify-content:space-evenly;
+        gap: 40%;
+        align-items: center;
+    }
+    img{
+        max-height: 50px;
+    }
+
+    @media screen and (max-width: 800px){
+        
+    }
+
+</style>
