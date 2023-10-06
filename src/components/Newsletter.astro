@@ -1,0 +1,60 @@
+---
+import "../css/style.css";
+import RadioButtonsNews from "./RadioButtonsNews.astro";
+---
+
+<article>
+    <div>
+        <h3>NYHEDSBREV</h3>
+            <form>
+                <label for="email">E-mail adresse</label>
+                <input type="text" id="email" name="email">
+                <label for="first_name">Dit navn</label>
+                <input type="text" id="first_name" name="first_name">
+                <label for="last_name">Dit efternavn</label>
+                <input type="text" id="last_name" name="last_name">
+            </form>
+            <RadioButtonsNews/>
+    </div>
+    <button>Tilmeld</button>
+</article>
+
+
+<style>
+
+    article, form{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type=text], select {
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #003866;
+        background-color: #3b3b3b;
+    }
+
+    label{
+        color: #d9d9d9;
+    }
+
+    input[type=text]{
+        margin-bottom: 15px;
+    }
+
+    button{
+        margin-top: 15px;
+    }
+
+    @media screen and (max-width: 800px){
+        div{
+            display: none;
+        }
+
+        button{
+            margin: 0;
+        }
+    }
+
+</style>
