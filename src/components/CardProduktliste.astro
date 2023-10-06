@@ -1,0 +1,61 @@
+---
+import "../css/style.css";
+const {data} = Astro.props;
+console.log(data);
+---
+<article>
+    <img src={data.imgArtist}/>
+
+    <div class="box">
+        <h1>{data.titel}</h1>
+        <a href="/info_artwork">Læs mere</a>
+    </div>
+</article> 
+
+<style>
+    article{
+        width: 369px;
+        margin-top: 60px;
+    }
+
+    img{
+        max-width: 100%;
+        border: 0.5px solid #181818;
+    }
+
+    .box{
+        border: 0.5px solid #181818;
+        background: #F2F2F2;
+        margin-top: -10px;
+    }
+
+    h1{
+        color: var(--text-color-2, #000);
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    a{
+        border-radius: 25px;
+        background: linear-gradient(270deg, #4EB3B6 -21.53%, #438CBF 21.38%, #8A63E8 52.97%, #C55790 86.86%, #F54D48 116.37%);
+        display: flex;
+        width: 150px;
+        height: 45px;
+        padding: 13px 43px;
+        justify-content: center;
+        margin-left: 110px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        font-size: 16px;
+        font-style: normal;
+    }
+
+    a:hover{
+        background: #000;
+    }
+
+</style>
