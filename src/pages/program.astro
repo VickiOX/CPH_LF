@@ -1,9 +1,35 @@
 ---
+import CardProduktliste from "../components/CardProduktliste.astro";
 import "../css/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
+const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
+{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0eHhuaXB2YWRrbXNxaGpudXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTY5NDAsImV4cCI6MjAxMjA3Mjk0MH0.ddGNOSZUhfe8TyxabfTJJhNvlqIITULr31F3RvowAEA"
+    },}).then((res) => res.json());
 ---
 
 
 <MainLayout title="Program 2023">
 
+    <section class="programListe">
+        {
+        data.map((produktListe) => {
+            return  <CardProduktliste data={produktListe}/>;
+        })
+        }
+    </section>
 </MainLayout>
+
+<style>
+    .programListe{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 30px;
+        padding: 100px;
+        margin-top: 20px;
+    }
+</style>
+
+
