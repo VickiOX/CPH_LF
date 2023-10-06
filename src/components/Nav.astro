@@ -1,6 +1,5 @@
 ---
 import "../css/style.css";
-import BurgerMenu from "./BurgerMenu.astro";
 ---
 
 <nav>
@@ -8,10 +7,6 @@ import BurgerMenu from "./BurgerMenu.astro";
     <a href="/past">TIDLIGERE FESTIVALER</a>
     <a href="/about_us">OM OS</a>
 </nav>
-
-<div class="burger_menu">
-    <BurgerMenu/>
-</div>
 
 <style>
 
@@ -23,19 +18,12 @@ import BurgerMenu from "./BurgerMenu.astro";
         text-decoration: none;
     }
 
-    .burger_menu{
-        display: none;
+    a:hover {
+        text-decoration: underline;
     }
 
-    @media screen and (max-width: 800px){
-        nav{
-            display: none;
-        }
-
-        .burger_menu{
-            display: flex;
-        }
-
+    a:active {
+        text-decoration: underline;
     }
 
 </style>

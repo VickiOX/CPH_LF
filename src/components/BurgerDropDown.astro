@@ -1,0 +1,32 @@
+---
+import "../css/style.css";
+---
+
+<div class="burger_nav">
+    <div class="nav_bar">
+        <a class="navlink" href="/program">PROGRAM</a>
+        <a class="navlink" href="/past">TIDLIGERE FESTIVALER</a>
+        <a class="navlink" href="/about_us">OM OS</a>
+    </div>
+</div>
+
+
+
+<style>
+
+.burger_nav{
+        display: none;
+    }
+
+    @media screen and (max-width: 800px){
+
+            .burger_nav.active{
+                display: block;
+                position: relative;
+                max-width: 100%;
+            }
+
+        }
+
+
+</style>
