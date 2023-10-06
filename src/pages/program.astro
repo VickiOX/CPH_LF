@@ -12,6 +12,7 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
 
 
 <MainLayout title="Program 2023">
+    <h1>PROGRAM 2024</h1>
 
     <section class="programListe">
         {
@@ -23,13 +24,55 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
 </MainLayout>
 
 <style>
+    @media (min-width: 800px){
+
+        h1{
+        background: linear-gradient(270deg, #4EB3B6 6.33%, #438CBF 26.62%, #8A63E8 50.54%, #C55790 75.5%, #F54D48 92.66%);
+        width: 591px;
+        height: 85px;
+        color: #FFF;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 70px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-left: 430px;
+        margin-bottom: -30px;
+    }
     .programListe{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         margin-left: 30px;
         padding: 100px;
         margin-top: 20px;
+        }
     }
+
+    @media (max-width: 800px){
+        h1{
+        background: linear-gradient(270deg, #4EB3B6 6.33%, #438CBF 26.62%, #8A63E8 50.54%, #C55790 75.5%, #F54D48 92.66%);
+        width: 591px;
+        height: 85px;
+        color: #FFF;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 70px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-left: 80px;
+        margin-bottom: -30px;
+    }
+        .programListe{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        margin-left: -20px;
+        padding: 20px;
+        margin-top:20px;
+        }
+    }
+
 </style>
 
 
