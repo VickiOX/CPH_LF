@@ -1,0 +1,49 @@
+---
+---
+<a class="box button" href="#">Læs Mere</a>
+<style>
+       .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       padding: 9px;
+        text-decoration: none;
+        background-color: #D9D9D9;
+        border-radius: 25px;
+        font-size: 14px;
+        color: #252525;  
+        z-index: 2;
+    }
+    .box {
+        position: relative;
+        width: 90px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 25px; 
+        padding: 2px; 
+        background:linear-gradient(90deg,#F54D48,#C55790,#8A63E8,#438CBF,#4EB3B6); 
+       -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+    }
+    .button:hover{
+        background-color: #252525;
+        color: #D9D9D9; 
+        scale:1.08;
+    }
+   @media (max-width: 800px){
+    .button, .box{
+        width: 70px;
+         height: 10px;
+         padding:8px;
+         font-size: 12px;
+         text-decoration: none;
+    }
+   }
+</style>
