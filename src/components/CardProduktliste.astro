@@ -2,14 +2,17 @@
 import "../css/style.css";
 const {data} = Astro.props;
 ---
+
+<a href={`produktListe/${data.slug}`}>
 <article>
     <img src={data.imgArtist}/>
 
     <div class="box">
         <h1>{data.titel}</h1>
-        <a href="/info_artwork">Læs mere</a>
+        <a class="button" href="/info_artwork">Læs mere</a>
     </div>
 </article> 
+</a>
 
 <style>
    @media (min-width: 800px){
@@ -33,7 +36,7 @@ const {data} = Astro.props;
         font-weight: 400;
         line-height: normal;
     }
-    a{
+   .button {
         border-radius: 25px;
         background: linear-gradient(270deg, #4EB3B6 -21.53%, #438CBF 21.38%, #8A63E8 52.97%, #C55790 86.86%, #F54D48 116.37%);
         display: flex;
@@ -52,7 +55,7 @@ const {data} = Astro.props;
         max-width: 100%;
         border: 0.5px solid #181818;
         }
-    a:hover{
+    .button a:hover{
         background: #000;
     }
     @media (max-width: 800px){
@@ -69,7 +72,7 @@ const {data} = Astro.props;
         height: 100px;
         margin-top: -10px;
     }
-    a{
+    .button {
         border-radius: 25px;
         background: linear-gradient(270deg, #4EB3B6 -21.53%, #438CBF 21.38%, #8A63E8 52.97%, #C55790 86.86%, #F54D48 116.37%);
         padding: 10px;

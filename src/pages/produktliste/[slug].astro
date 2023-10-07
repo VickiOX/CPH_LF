@@ -1,0 +1,18 @@
+---
+export async function getStaticPaths() {
+  const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF", {
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0eHhuaXB2YWRrbXNxaGpudXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTY5NDAsImV4cCI6MjAxMjA3Mjk0MH0.ddGNOSZUhfe8TyxabfTJJhNvlqIITULr31F3RvowAEA"
+    },}
+    ).then(response => response.json());
+
+  return data.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { post },
+    };
+  });
+}
+
+---
