@@ -1,0 +1,59 @@
+---
+const {img, title, text} = Astro.props;
+---
+
+
+<article>   
+    <div> 
+        <img src={img}> 
+    </div>
+
+  <div class="text">
+        <h2>{title}</h2>
+        <p>{text}</p>
+    </div>
+</article>
+
+
+<style>
+
+
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    margin: 5rem;
+    place-items: center;
+
+      box-sizing: border-box; 
+      border-radius: 10px;
+      background: #181818;
+      width: 1205px;
+        height: 560px;
+        padding: 10px;
+        margin-left: 120px;
+}
+
+img {
+ width: 192%;
+ height: 559px;
+ margin-top: -0.6rem;
+ margin-left: 3rem;
+}    
+.text {
+    margin-top: -6rem;
+    margin-left: 3.5rem;
+    line-height: 2rem;
+    font-size: 20px;
+}
+
+.text h2 {
+    line-height: 2.5rem;
+    line-break: align-self: start;;
+}
+
+article:nth-child(odd) .text {
+    order: -1;
+}
+
+</style>
