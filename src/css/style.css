@@ -2,11 +2,14 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, .nav_link {
+h1,
+h2,
+h3,
+h4,
+.nav_link {
   color: #ffffff;
 }
 
 p {
   color: #d9d9d9;
 }
-

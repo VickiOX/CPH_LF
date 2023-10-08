@@ -1,9 +1,43 @@
 ---
 import "../css/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
+import Shelf from "../components/Shelf.astro";
+import CardBordMembers from "../components/CardBordMembers.astro";
+const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF-board",
+{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0eHhuaXB2YWRrbXNxaGpudXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTY5NDAsImV4cCI6MjAxMjA3Mjk0MH0.ddGNOSZUhfe8TyxabfTJJhNvlqIITULr31F3RvowAEA"
+    },}).then((res) => res.json());
+
 ---
 
 
 <MainLayout title="Om os">
+    <h1>OM OS</h1>
+   
+    <Shelf title="BESTYRELSEN">
+        <section>
+            {data.map(membersList =>{
+                return <CardBordMembers membersData={membersList}/>
+            })
+            }
+        </section>
+    </Shelf>
+
+    <Shelf title="STIFTENDE PARTNERE"> 
+        <section>
+            <img src="../../tivoli.webp" alt="tivoli logo">
+            <img src="../../stromma.webp" alt="stromma logo">
+            <img src="../../d-studio.webp" alt="D studio logo">
+            <img src="../../vnrtv.webp" alt="vnr.tv logo">
+        </section>
+    </Shelf>
 
 </MainLayout>
+
+<style> 
+     img{
+            max-height: 5%;
+        }
+</style>
