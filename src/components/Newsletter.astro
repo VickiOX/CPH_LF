@@ -48,10 +48,11 @@ import RadioButtonsNews from "./RadioButtonsNews.astro";
     button{
         padding: 13px 43px;
         text-decoration: none;
-        background-color: #D9D9D9;
+        background: linear-gradient(270deg, #4EB3B6 -21.53%, #438CBF 21.38%, #8A63E8 52.97%, #C55790 86.86%, #F54D48 116.37%);
+        border: none;
         border-radius: 25px;
         font-size: 16px;
-        color: #252525;  
+        color: #D9D9D9;
         z-index: 2;
         width: 150px;
         height: 45px;
@@ -65,7 +66,13 @@ import RadioButtonsNews from "./RadioButtonsNews.astro";
 
 
     button:hover{
-        background-color: #252525;
+        background: #000000;
+        color: #D9D9D9; 
+        scale:1.08;
+    }
+
+    button:active{
+        background: #000000;
         color: #D9D9D9; 
         scale:1.08;
     }
