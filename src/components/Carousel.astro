@@ -1,0 +1,257 @@
+---
+const {img, title} = Astro.props
+import Carousel_Card from "../components/Carousel_Card.astro";
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--https://www.youtube.com/watch?v=7HPsdVQhpRw denne video er blevet brugt til at genskabe en karusel -->
+
+<div class="carouselContainer"> 
+  <div class="wrapper">
+        <i id="left" class="fa fa-angle-left box"></i>
+    <ul class="carousel">
+      <Carousel_Card img ="/imgs/kunst/Acid-Sun.webp" title="Acid Sun" artWork=""/>
+      <Carousel_Card img ="/imgs/kunst/Blue-Earth1.webp" title="Blue Earth"/>
+      <Carousel_Card img ="/imgs/kunst/Candela-Portal.webp" title="Candela Portal"/>
+      <Carousel_Card img ="/imgs/kunst/Dreamcatcher.webp" title="Creamcatcher"/>
+      <Carousel_Card img ="/imgs/kunst/Echo1.webp" title="Echo"/>
+      <Carousel_Card img ="/imgs/kunst/Hook-Up.webp" title="Hook Up"/>
+      <Carousel_Card img ="/imgs/kunst/Kære-Gud.webp" title="Kære Gud"/>
+      <Carousel_Card img ="/imgs/kunst/Love-Train.webp" title="Loce Train"/>
+    </ul>
+    <i id="right" class="fa fa-angle-right box"></i>
+  </div>
+
+</div>
+
+
+<style>
+    /* Buttons */
+    /*.wrapper{
+      background-color: #252525;
+    }*/
+    .box{
+      color: #252525;
+      z-index: 5;
+    }
+
+    .box:hover, .box:visited{
+      color:#D9D9D9;
+      z-index: 5;
+    }
+    .wrapper .box::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%; 
+        padding: 2px; 
+        background:linear-gradient(90deg,#F54D48,#C55790,#8A63E8,#438CBF,#4EB3B6); 
+       -webkit-mask: /*webkit gør at der kan være indhold i .box og at der kan ses via contect-box og ved mask composite*/ 
+           linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+    }
+    
+
+      /* Carousel */
+    /*https://www.youtube.com/watch?v=6QE8dXq9SOE denne video er blevet brugt til kun det emd card delen*/
+      .artWork_view .img img{
+        height:320px;
+        width:320px;
+        object-fit: cover;
+      }
+
+      .carousel .artWork_view{
+        list-style: none;
+
+      }
+
+      
+      .carouselContainer{
+        display: flex;
+        padding:0 35px;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        
+      }
+      .wrapper{
+        max-width: 1200px;
+        width: 100%;
+        position: relative;
+        background-color: #252525;
+        border-radius: 10px;
+        padding: 60px 20px 0 20px;
+      }
+      .wrapper i{
+        top: 44%;
+        height: 46px;
+        width:46px;
+        position: absolute;
+        text-align: center;
+        line-height: 46px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        background: #D9D9D9;
+        transform: translateY(44%);
+      }
+      
+
+      .wrapper #left{
+        left:-23px;
+        display: none;
+      }
+      .wrapper i:last-child{
+        right:-23px;
+      }
+
+      .wrapper i:hover{
+        background-color: #252525;
+        color: #D9D9D9; 
+        scale:1.08;
+    }
+      
+      .wrapper .carousel{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        gap:20px;
+        overflow: hidden;
+        cursor: pointer;
+        scroll-behavior: smooth;
+       
+      }
+      .carousel .dragging{
+        cursor: grab;
+        scroll-behavior: auto;
+      }
+      
+      .carousel .dragging img{
+        pointer-events: none;
+      }
+    
+      .carousel img:first-child{
+        margin-left: 0px;
+      }
+
+      @media screen and (max-width:800px){
+
+        .wrapper i{
+          top:44%;
+          transform: translateY(-44%);
+        }
+        .wrapper .carousel {
+          grid-auto-columns: calc((100% / 2) - 10px);
+          padding-left: 20px;
+        }
+        .artWork_view .img img{
+          height:260px;
+          width:160px;
+          object-fit: cover;
+        
+          
+        }
+        .artWork_view{
+          padding-right:40px;
+          
+        }
+       
+      }
+</style>
+
+<script defer>// defer tells the browser to wait until the page has finished parsing before exevuting the script
+    const carousel = document.querySelector(".carousel"),
+    firstImg =  document.querySelectorAll("img")[1],
+    arrowIcons = document.querySelectorAll(".wrapper i");
+
+    let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+
+   
+    const showHideIcons = () =>{
+        //showing and hiding prev/next icon according to carousel scroll left value
+        let scrollWidth = carousel.scrollWidth - carousel.clientWidth;// scrollWidth returns the entire width including what is not viewablem clientWidth returns the viewable width of an element (get max scrikkabke width)
+       
+
+        if(carousel.scrollLeft == 0){
+            arrowIcons[0].style.display = "none";
+        }else{
+            arrowIcons[0].style.display = "block";
+        }
+        if(carousel.scrollLeft == scrollWidth){
+            arrowIcons[1].style.display = "none";
+        }else{
+            arrowIcons[1].style.display = "block";
+        }
+    }
+
+    arrowIcons.forEach(icon => {
+        icon.addEventListener("click", () => { 
+            // if clicked icon is left, reduce with value form the carousel scroll left else add to it
+            let firstImgWidth = firstImg.clientWidth + 90; // getting first img widrth & adding 360 margin value // mobil 90 og web 360?
+            if(icon.id =="left"){
+                carousel.scrollLeft -= firstImgWidth;
+            } else{
+                carousel.scrollLeft += firstImgWidth;
+            }
+            setTimeout( () => showHideIcons(), 60); // calling showHideIcons after 60ms
+        })
+    });
+
+    const autoSlide = () =>{
+        //if there is no image left to scroll then return from here
+        if(carousel.scrollLeft == ( carousel.scrollWidth - carousel.clientWidth))return;
+
+        positionDiff = Math.abs(positionDiff); //making positionDiff value to positive
+        let firstImgWidth = firstImg.clientWidth + 90; // mobil 90 og web 360?
+        ///getting diffrence value that needs to add or reduce form asrousel left to take middel img cetner
+        let vallDifference = firstImgWidth - positionDiff;
+
+        if(positionDiff > firstImgWidth/ 3){
+             // if current scrollLeft is greater than prevScrollLeft then user is sliding to the right else sliding to the left
+             carousel.scrollLeft += vallDifference; //if user scrolling to the right
+        } else{
+            carousel.scrollLeft -= positionDiff; // if user is scrolling to the left
+        }
+
+        
+    }
+
+    // by default isDragStart false and it'll only true ifthe mouse btn is clicked
+    const dragStart = (e) => {
+        // updating global variables value on mouse down event
+        isDragStart = true;
+        prevPageX = e.pageX || e.touches[0].pageX;//e.pageX will run on desktop devices and on touch devices etouches[0].pageX run, these both gives x coordinate of the mouse pointer or touch
+        prevScrollLeft =  carousel.scrollLeft;
+    }
+
+    const dragging = (e) => {
+        // scrolling imgs/carousel to left according to mouse pointer
+        if(!isDragStart) return;
+        e.preventDefault(); // preventing it's default behavior. Now , img won't be dragged
+        isDragging = true;
+        carousel.classList.add("dragging"); // adding dragging class to carousel on mousemove
+        positionDiff = (e.pageX ||  e.touches[0].pageX) -prevPageX;
+        carousel.scrollLeft = prevScrollLeft - positionDiff; // scrollLeft or return the number of pixel an element's content is scrolled horizontally
+        showHideIcons();
+    }
+
+    const dragStop = () => {
+        isDragStart = false; // make isDragStart to false once user released the mouse btn so, the img stop sliding until the mouse down btn is clicked again
+        carousel.classList.remove("dragging"); //removing this class on mouseup
+
+        if(!isDragStart) return; //now isDragging witil only true if user start dragging Otherwise it is false & autoSlide function won't call.
+        isDragging = false;
+        autoSlide();
+    }
+
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("touchstart", dragStart);
+
+    carousel.addEventListener("mousemove", dragging);
+    carousel.addEventListener("touchmove", dragging);
+
+    carousel.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("mouseleave", dragStop);
+    carousel.addEventListener("touchend", dragStop);
+</script>

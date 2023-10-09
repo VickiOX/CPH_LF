@@ -1,0 +1,38 @@
+---
+const {img, title, artWork} = Astro.props
+---
+
+<li class="artWork_view">
+    <div class="img"><a href={artWork}> <img src={img} alt="billede" draggable="false"></a></div> 
+    <h3>{title}</h3>
+  </li>
+
+  <style>
+     .artWork_view .img img{
+        height:320px;
+        width:320px;
+        object-fit: cover;
+      
+      }
+      .artWork_view{
+        list-style: none;
+        text-decoration: none;
+
+      }
+
+      @media screen and (max-width:800px){
+
+
+        .artWork_view .img img{
+        height:260px;
+        width:160px;
+        object-fit: cover;
+
+  
+        }
+        .artWork_view{
+        padding-right:40px;
+  
+        }
+      }
+  </style>

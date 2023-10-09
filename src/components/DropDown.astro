@@ -1,0 +1,130 @@
+---
+---
+<!--https://www.youtube.com/watch?v=VQWu4e6agPc&t=40s -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="dropdown">
+   <!--  <button class="box" disabled> ÅR
+        <span></span>
+         <i class="fa fa-angle-down"></i>
+    </button> 
+    <div class="content"> -->
+        <select class="box" name="år" id="år"> 
+        <option value="2023">2023</option>
+        <option value="2022" selected>2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        <option value="2018">2018</option>
+        </select>
+    </div>
+</div>
+
+<div class="clicked_2023">
+
+</div>
+
+<style>
+    
+    i{
+        font-size: 1.2rem;
+    }
+    .dropdown {
+        display:inline-block;
+        z-index: 4;
+        padding-left: 40px;
+        padding-top: 40px;
+        position: absolute;
+        top:200px;
+        left:60px;
+    }
+    select /*.dropdown button*/{
+        background-color: #D9D9D9;
+        color: #252525;
+        padding: 12px 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        text-decoration: none;
+        font-size: 14px;
+        position: relative;
+        width: 120px;
+        height: 43px;
+        cursor: pointer;
+       
+    }
+    button span{
+        padding-left: 33px;
+    }
+
+    select option{
+        display: block;
+        color: #252525;
+        text-decoration: none;
+        padding: 13px 34px 13px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+
+    }
+
+    .dropdown option{
+        display:none;
+        position: absolute;
+        background-color: #D9D9D9;
+        min-width: 120px;
+        border-radius: 8px;
+    }
+     .box::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 8px; 
+        padding: 4px; 
+        background:linear-gradient(90deg,#F54D48,#C55790,#8A63E8,#438CBF,#4EB3B6); 
+       -webkit-mask: /*webkit gør at der kan være indhold i .box og at der kan ses via contect-box og ved mask composite*/ 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+    }
+    
+    
+    .dropdown:hover option{
+        display: block;
+    }
+    
+
+    .dropdown:hover select{
+        background-color: #252525;
+        color: #D9D9D9;
+    }
+    .dropdown option:hover{
+        background-color: #252525;
+        color: #D9D9D9;
+    }
+    
+      
+        /* Media query for mobile devices */
+       @media screen and (max-width: 600px) {
+
+            select{
+                width: 92px;
+                height: 33px;
+                font-size: 12px;
+                padding: 1px 10px;
+            }
+
+           /* .dropdown {
+                display: block;
+            
+            
+
+            select {
+                display: none;
+            }
+
+            .dropdown.active select {
+                display: block;
+            }*/
+        }
+  
+</style>
