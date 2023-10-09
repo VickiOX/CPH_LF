@@ -9,9 +9,9 @@ import BurgerMenu from "./BurgerMenu.astro";
     <a class="nav_link" href="/about_us">OM OS</a>
 </nav>
 
-<div class="burger_menu">
+<article>
     <BurgerMenu/>
-</div>
+</article>
 
 <style>
 
@@ -23,8 +23,17 @@ import BurgerMenu from "./BurgerMenu.astro";
         text-decoration: none;
     }
 
-    .burger_menu{
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        text-decoration: underline;
+    }
+
+    article{
         display: none;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 800px){
@@ -32,10 +41,9 @@ import BurgerMenu from "./BurgerMenu.astro";
             display: none;
         }
 
-        .burger_menu{
-            display: flex;
+        article{
+            display: block;
         }
-
     }
 
 </style>

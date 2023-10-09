@@ -1,10 +1,46 @@
 ---
 import "../css/style.css";
 ---
-
-
-
+    <section class="burgermenu">
+        <span class="line_1"></span>
+        <span class="line_2"></span>
+        <span class="line_3"></span>
+    </section>
 
 <style>
 
+    span{
+        display: block;
+        width: 40px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .line_1{
+        background-color: #f54d48;
+    }
+
+    .line_2{
+        background-color: #8a63e8;
+    }
+
+    .line_3{
+        background-color: #4eb3b6;
+    }
+
+    .burgermenu.active .line_2{
+        opacity: 0;
+    }
+
+    .burgermenu.active .line_1{
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burgermenu.active .line_3{
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
 </style>
+
+<script src="../scripts/java.js"></script>
