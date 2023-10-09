@@ -16,28 +16,46 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF-b
 <MainLayout title="Om os">
     <h1>OM OS</h1>
    
+    <h2>VORES VISION</h2>
+    <p>Copenhagen Light Festival er en non-profit forening, som er grundlagt af Tivoli, Stromma, VNR.tv og Louis Poulsen / D Studio. Med København som kulisse søger foreningen at introducere og præsentere lyskunst i interaktion med byens særpræg, mørke og æstetik.</p>
+
     <Shelf title="BESTYRELSEN">
-        <section>
-            {data.map(membersList =>{
-                return <CardBordMembers membersData={membersList}/>
-            })
-            }
-        </section>
+        {data.map(membersList =>{
+            return <CardBordMembers membersData={membersList}/>
+        })
+        }
     </Shelf>
 
-    <Shelf title="STIFTENDE PARTNERE"> 
-        <section>
-            <img src="../../tivoli.webp" alt="tivoli logo">
-            <img src="../../stromma.webp" alt="stromma logo">
-            <img src="../../d-studio.webp" alt="D studio logo">
-            <img src="../../vnrtv.webp" alt="vnr.tv logo">
-        </section>
-    </Shelf>
+    <h2>STIFTENDE PARTNERE</h2>
+    <article>
+        <img src="../../tivoli.webp" alt="tivoli logo">
+        <img src="../../stromma.webp" alt="stromma logo">
+        <img src="../../d-studio.webp" alt="D studio logo">
+        <img src="../../vnrtv.webp" alt="vnr.tv logo">
+    </article>
 
 </MainLayout>
 
 <style> 
-     img{
-            max-height: 5%;
+    article img{
+            max-height: 150px;
         }
+
+    article{
+        display: flex;
+    }
+
+    p{
+        width: 500px;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    article{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 </style>

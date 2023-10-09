@@ -6,8 +6,10 @@ const {membersData} = Astro.props
 
 <article>
     <img src={membersData.imgBoard}>
-    <h2>{membersData.boardName}</h2>
-    <p>{membersData.boardTitle}</p>
+    <section>
+        <h2>{membersData.boardName}</h2>
+        <p>{membersData.boardTitle}</p>
+    </section>
 </article>
 
 
@@ -15,5 +17,14 @@ const {membersData} = Astro.props
 
 
 <style>
-   
+   article{
+        display: flex;
+        flex-direction: column;  
+   }
+
+   section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   }
 </style>
