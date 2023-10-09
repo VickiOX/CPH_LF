@@ -1,9 +1,9 @@
 ---
-const {img, title, artWork} = Astro.props
+const {img, title, href} = Astro.props
 ---
 
 <li class="artWork_view">
-    <div class="img"><a href={artWork}> <img src={img} alt="billede" draggable="false"></a></div> 
+    <div class="img"><a href={href}> <img src={img} alt="billede" draggable="false"></a></div> 
     <h3>{title}</h3>
   </li>
 

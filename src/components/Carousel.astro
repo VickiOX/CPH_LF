@@ -1,5 +1,4 @@
 ---
-const {img, title} = Astro.props
 import Carousel_Card from "../components/Carousel_Card.astro";
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -10,14 +9,14 @@ import Carousel_Card from "../components/Carousel_Card.astro";
   <div class="wrapper">
         <i id="left" class="fa fa-angle-left box"></i>
     <ul class="carousel">
-      <Carousel_Card img ="/imgs/kunst/Acid-Sun.webp" title="Acid Sun" artWork=""/>
-      <Carousel_Card img ="/imgs/kunst/Blue-Earth1.webp" title="Blue Earth"/>
-      <Carousel_Card img ="/imgs/kunst/Candela-Portal.webp" title="Candela Portal"/>
-      <Carousel_Card img ="/imgs/kunst/Dreamcatcher.webp" title="Creamcatcher"/>
-      <Carousel_Card img ="/imgs/kunst/Echo1.webp" title="Echo"/>
-      <Carousel_Card img ="/imgs/kunst/Hook-Up.webp" title="Hook Up"/>
-      <Carousel_Card img ="/imgs/kunst/Kære-Gud.webp" title="Kære Gud"/>
-      <Carousel_Card img ="/imgs/kunst/Love-Train.webp" title="Loce Train"/>
+      <Carousel_Card img ="/imgs/kunst/Acid-Sun.webp" title="Acid Sun" href="/info_artwork"/>
+      <Carousel_Card img ="/imgs/kunst/Blue-Earth1.webp" title="Blue Earth" href="/info_artwork"/>
+      <Carousel_Card img ="/imgs/kunst/Candela-Portal.webp" title="Candela Portal" href="/info_artwork"/>
+      <Carousel_Card img ="/imgs/kunst/Dreamcatcher.webp" title="Creamcatcher" href="/info_artwork"/>
+      <Carousel_Card img ="/imgs/kunst/Echo1.webp" title="Echo" href="/info_artwork"/>
+      <Carousel_Card img ="/imgs/kunst/Hook-Up.webp" title="Hook Up" href="/info_artwork"/>
+      <Carousel_Card img ="/imgs/kunst/Kære-Gud.webp" title="Kære Gud" href="/info_artwork"/>
+      <Carousel_Card img ="/imgs/kunst/Love-Train.webp" title="Loce Train" href="/info_artwork"/>
     </ul>
     <i id="right" class="fa fa-angle-right box"></i>
   </div>
