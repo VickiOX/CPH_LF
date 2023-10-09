@@ -14,6 +14,24 @@ p {
   color: #d9d9d9;
 }
 
-.top {
-  max-width: 100%;
+@media (min-width: 800px) {
+  .top {
+    max-width: 100%;
+  }
+
+  .top2 {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .top {
+    display: none;
+    max-width: 100%;
+  }
+
+  .top2 {
+    width: 410px;
+    height: 194px;
+  }
 }
