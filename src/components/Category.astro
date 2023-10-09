@@ -1,0 +1,66 @@
+---
+
+/*
+const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF?select=filtrering",
+{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp0eHhuaXB2YWRrbXNxaGpudXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTY5NDAsImV4cCI6MjAxMjA3Mjk0MH0.ddGNOSZUhfe8TyxabfTJJhNvlqIITULr31F3RvowAEA"
+    },}).then((res) => res.json());
+
+
+console.log(data);
+*/
+---
+<div id="myBtnContainer">
+    <button class="btn"> KUNSTVÆRKER</button>
+    <button class="btn"> EKSTRA LYSOPLEVELSER</button>
+    <button class="btn"> POP-UP EVENTS</button>
+</div>
+
+<style>
+
+@media (min-width: 800px){
+
+    #myBtnContainer{
+        margin-left: 265px;
+        margin-top: 80px;
+        margin-bottom: -170px;
+    }
+  /* Style the buttons */
+  .btn {
+    border-radius: 12px;
+    border: 0.1px solid #02A3B4;
+    background: linear-gradient(270deg, rgba(161, 86, 203, 0.70) 7.29%, rgba(199, 75, 147, 0.70) 47.92%, rgba(78, 179, 182, 0.70) 88.02%);
+    padding: 20px;
+    color: #ddd;
+    margin: 30px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  /* Add a light background on mouse-over */
+  .btn:hover {
+    background: linear-gradient(270deg, rgba(161, 86, 203, 0.3) 7.29%, rgba(199, 75, 147, 0.3) 47.92%, rgba(78, 179, 182, 0.3) 88.02%);
+  
+  }
+}
+
+@media (max-width: 800px){
+   
+    #myBtnContainer{
+        display: none;
+    }
+  /* Style the buttons */
+  .btn {
+   display: none;
+  }
+  
+  /* Add a light background on mouse-over */
+  .btn:hover {
+    display: none;
+  
+  }
+
+}
+</style>
