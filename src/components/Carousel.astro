@@ -204,7 +204,7 @@ import Carousel_Card from "../components/Carousel_Card.astro";
         if(carousel.scrollLeft == ( carousel.scrollWidth - carousel.clientWidth))return;
 
         positionDiff = Math.abs(positionDiff); //making positionDiff value to positive
-        let firstImgWidth = firstImg.clientWidth + 90; // mobil 90 og web 360?
+        let firstImgWidth = firstImg.clientWidth + 360; // mobil 90 og web 360?
         ///getting diffrence value that needs to add or reduce form asrousel left to take middel img cetner
         let vallDifference = firstImgWidth - positionDiff;
 
