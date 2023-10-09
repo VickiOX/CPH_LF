@@ -8,7 +8,47 @@ import Carousel from "../components/Carousel.astro";
 
 
 <MainLayout title="Tidligere festivaller">
-<Buttons />
-<DropDown />
-<Carousel />
+<h1>TIDLIGERE FESTIVALER</h1>
+<div class="box"> 
+    <div>
+        <DropDown />
+    </div>
+    <div> 
+        <Carousel>
+            
+        </Carousel>
+    </div>
+
 </MainLayout>
+</div>
+<style>
+
+        .box{
+            position: relative;
+        }
+
+        h1{
+        background: linear-gradient(270deg, #4EB3B6 6.33%, #438CBF 26.62%, #8A63E8 50.54%, #C55790 75.5%, #F54D48 92.66%);
+        width: 880px;
+        height: 85px;
+        color: #FFF;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 70px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width:800px){ 
+        h1{
+            width: 300px;
+            height: 65px;
+            font-size: 30px;
+        }
+    }
+    
+</style>

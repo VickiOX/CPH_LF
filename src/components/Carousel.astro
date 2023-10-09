@@ -1,52 +1,45 @@
 ---
-
+const {img, title} = Astro.props
+import Carousel_Card from "../components/Carousel_Card.astro";
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<!--https://www.youtube.com/watch?v=7HPsdVQhpRw denne video er blevet brugt til at genskabe en karusel -->
+
 <div class="carouselContainer"> 
-
-
-
-<div class="wrapper">
+  <div class="wrapper">
         <i id="left" class="fa fa-angle-left box"></i>
-    <div class="carousel">
-        <img src="/imgs/kunst/Acid-Sun.webp" alt="billede" draggable="false">
-        <img src="/imgs/kunst/Blue-Earth1.webp" alt="billede" draggable="false">
-        <img src="/imgs/kunst/Candela-Portal.webp" alt="billede" draggable="false">
-        <img src="/imgs/kunst/Dreamcatcher.webp" alt="billede" draggable="false">
-        <img src="/imgs/kunst/Echo1.webp" alt="billede" draggable="false">
-        <img src="/imgs/kunst/Hook-Up.webp" alt="billede" draggable="false">
-    </div>
+    <ul class="carousel">
+      <Carousel_Card img ="/imgs/kunst/Acid-Sun.webp" title="Acid Sun" artWork=""/>
+      <Carousel_Card img ="/imgs/kunst/Blue-Earth1.webp" title="Blue Earth"/>
+      <Carousel_Card img ="/imgs/kunst/Candela-Portal.webp" title="Candela Portal"/>
+      <Carousel_Card img ="/imgs/kunst/Dreamcatcher.webp" title="Creamcatcher"/>
+      <Carousel_Card img ="/imgs/kunst/Echo1.webp" title="Echo"/>
+      <Carousel_Card img ="/imgs/kunst/Hook-Up.webp" title="Hook Up"/>
+      <Carousel_Card img ="/imgs/kunst/Kære-Gud.webp" title="Kære Gud"/>
+      <Carousel_Card img ="/imgs/kunst/Love-Train.webp" title="Loce Train"/>
+    </ul>
     <i id="right" class="fa fa-angle-right box"></i>
+  </div>
+
 </div>
 
 
-</div>
 <style>
     /* Buttons */
-   /* i{
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        scale: 1;
-        position: absolute;
-        top: 50%;
-        padding: 14px;
-        text-decoration: none;
-        background-color: #D9D9D9;
-        border-radius: 50%;
-        color: #252525;  
-        z-index: 2;
-       
+    /*.wrapper{
+      background-color: #252525;
     }*/
-    /*.box {
-        position: relative;
-        width: 46px;
-        height: 46px;
-        line-height: 46px;
-        cursor: pointer;
-    }*/
-    /*.box::before {
+    .box{
+      color: #252525;
+      z-index: 5;
+    }
+
+    .box:hover, .box:visited{
+      color:#D9D9D9;
+      z-index: 5;
+    }
+    .wrapper .box::after {
         content: "";
         position: absolute;
         inset: 0;
@@ -54,17 +47,26 @@
         padding: 2px; 
         background:linear-gradient(90deg,#F54D48,#C55790,#8A63E8,#438CBF,#4EB3B6); 
        -webkit-mask: /*webkit gør at der kan være indhold i .box og at der kan ses via contect-box og ved mask composite*/ 
-           /* linear-gradient(#fff 0 0) content-box, 
+           linear-gradient(#fff 0 0) content-box, 
             linear-gradient(#fff 0 0);
             mask-composite: exclude;
     }
-    i:hover{
-        background-color: #252525;
-        color: #D9D9D9; 
-        scale:1.08;
-    }*/
+    
 
       /* Carousel */
+    /*https://www.youtube.com/watch?v=6QE8dXq9SOE denne video er blevet brugt til kun det emd card delen*/
+      .artWork_view .img img{
+        height:320px;
+        width:320px;
+        object-fit: cover;
+      }
+
+      .carousel .artWork_view{
+        list-style: none;
+
+      }
+
+      
       .carouselContainer{
         display: flex;
         padding:0 35px;
@@ -75,7 +77,11 @@
       }
       .wrapper{
         max-width: 1200px;
+        width: 100%;
         position: relative;
+        background-color: #252525;
+        border-radius: 10px;
+        padding: 60px 20px 0 20px;
       }
       .wrapper i{
         top: 44%;
@@ -89,21 +95,29 @@
         font-size: 1.2rem;
         background: #D9D9D9;
         transform: translateY(44%);
-        
       }
+      
 
-      .wrapper i:first-child{
+      .wrapper #left{
         left:-23px;
         display: none;
       }
       .wrapper i:last-child{
         right:-23px;
       }
+
+      .wrapper i:hover{
+        background-color: #252525;
+        color: #D9D9D9; 
+        scale:1.08;
+    }
       
       .wrapper .carousel{
-        white-space: nowrap;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 3) - 12px);
+        gap:20px;
         overflow: hidden;
-        font-size: 0px;
         cursor: pointer;
         scroll-behavior: smooth;
        
@@ -112,31 +126,43 @@
         cursor: grab;
         scroll-behavior: auto;
       }
-
+      
       .carousel .dragging img{
         pointer-events: none;
       }
-      .carousel img{
-        height: 360px;
-        object-fit: cover;
-        margin-left: 10px;
-        width: calc(100%/3);
-      }
+    
       .carousel img:first-child{
         margin-left: 0px;
       }
 
       @media screen and (max-width:800px){
-        .carousel img{
-            width: calc(100%/2);
-            height: 260px;
+
+        .wrapper i{
+          top:44%;
+          transform: translateY(-44%);
         }
+        .wrapper .carousel {
+          grid-auto-columns: calc((100% / 2) - 10px);
+          padding-left: 20px;
+        }
+        .artWork_view .img img{
+          height:260px;
+          width:160px;
+          object-fit: cover;
+        
+          
+        }
+        .artWork_view{
+          padding-right:40px;
+          
+        }
+       
       }
 </style>
 
-<script>
+<script defer>// defer tells the browser to wait until the page has finished parsing before exevuting the script
     const carousel = document.querySelector(".carousel"),
-    firstImg =  document.querySelectorAll("img")[0],
+    firstImg =  document.querySelectorAll("img")[1],
     arrowIcons = document.querySelectorAll(".wrapper i");
 
     let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
