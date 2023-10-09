@@ -189,7 +189,7 @@ import Carousel_Card from "../components/Carousel_Card.astro";
     arrowIcons.forEach(icon => {
         icon.addEventListener("click", () => { 
             // if clicked icon is left, reduce with value form the carousel scroll left else add to it
-            let firstImgWidth = firstImg.clientWidth + 90; // getting first img widrth & adding 360 margin value // mobil 90 og web 360?
+            let firstImgWidth = firstImg.clientWidth + 360; // getting first img widrth & adding 360 margin value // mobil 90 og web 360?
             if(icon.id =="left"){
                 carousel.scrollLeft -= firstImgWidth;
             } else{
