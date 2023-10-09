@@ -1,5 +1,6 @@
 ---
 import "../css/style.css";
+import BurgerMenu from "./BurgerMenu.astro";
 ---
 
 <nav>
@@ -7,6 +8,10 @@ import "../css/style.css";
     <a href="/past">TIDLIGERE FESTIVALER</a>
     <a href="/about_us">OM OS</a>
 </nav>
+
+<article>
+    <BurgerMenu/>
+</article>
 
 <style>
 
@@ -24,6 +29,21 @@ import "../css/style.css";
 
     a:active {
         text-decoration: underline;
+    }
+
+    article{
+        display: none;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 800px){
+        nav{
+            display: none;
+        }
+
+        article{
+            display: block;
+        }
     }
 
 </style>

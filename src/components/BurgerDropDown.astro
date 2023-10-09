@@ -4,18 +4,24 @@ import "../css/style.css";
 
 <div class="burger_nav">
     <div class="nav_bar">
+        <a class="navlink" href="/">HJEM</a>
         <a class="navlink" href="/program">PROGRAM</a>
         <a class="navlink" href="/past">TIDLIGERE FESTIVALER</a>
         <a class="navlink" href="/about_us">OM OS</a>
     </div>
 </div>
 
-
-
 <style>
 
 .burger_nav{
         display: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    a:active {
+        text-decoration: underline;
     }
 
     @media screen and (max-width: 800px){
@@ -24,9 +30,27 @@ import "../css/style.css";
                 display: block;
                 position: relative;
                 max-width: 100%;
+                background-color: #181818;
+                height: 400px;
+            }
+
+            .nav_bar{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .navlink{
+                padding: 40px 40px 40px 65px;
+                border-top: white 2px solid;
+            }
+
+            .nav_bar:last-child{
+                border-bottom: white 2px solid;
             }
 
         }
 
 
 </style>
+
+<script src="../scripts/java.js"></script>
