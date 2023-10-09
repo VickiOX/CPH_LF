@@ -12,6 +12,15 @@ h3,
 h4,
 .nav_link {
   color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 p {
@@ -26,6 +35,29 @@ p {
   .top2 {
     display: none;
   }
+
+  .titel {
+    background: linear-gradient(
+      270deg,
+      #4eb3b6 6.33%,
+      #438cbf 26.62%,
+      #8a63e8 50.54%,
+      #c55790 75.5%,
+      #f54d48 92.66%
+    );
+    width: 591px;
+    height: 85px;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 430px;
+    margin-bottom: -30px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -37,5 +69,27 @@ p {
   .top2 {
     width: 410px;
     height: 194px;
+  }
+
+  .titel {
+    background: linear-gradient(
+      270deg,
+      #4eb3b6 6.33%,
+      #438cbf 26.62%,
+      #8a63e8 50.54%,
+      #c55790 75.5%,
+      #f54d48 92.66%
+    );
+    width: 260px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 80px;
+    margin-bottom: 30px;
   }
 }
