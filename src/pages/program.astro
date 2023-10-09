@@ -2,6 +2,8 @@
 import CardProduktliste from "../components/CardProduktliste.astro";
 import "../css/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
+import Category from "../components/Category.astro";
+
 const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
 {
     method: "GET",
@@ -14,6 +16,8 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
 <MainLayout title="Program 2023">
     <h1>PROGRAM 2024</h1>
 
+<Category/>
+
     <section class="programListe">
         {
         data.map((produktListe) => {
@@ -22,6 +26,7 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
         }
     </section>
 </MainLayout>
+
 
 <style>
     @media (min-width: 800px){
