@@ -1,6 +1,7 @@
 ---
+const {text, href} = Astro.props
 ---
-<a class="box button" href="#">Læs Mere</a>
+<a class="box button" href={href}>{text}</a>
 <style>
        .button{
         justify-content: center;
@@ -14,8 +15,6 @@
         z-index: 2;
         width: 150px;
         height: 45px;
-        margin-left: 110px;
-        margin-bottom: 20px;
     
     
     }
