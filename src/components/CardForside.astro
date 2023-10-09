@@ -11,6 +11,7 @@
     <div class="text">
         <a href="/program"><h2>PROGRAM 2023</h2></a>
         <p>Vores program er fyldt med spændende ny lys kunst, som du og din familie kan komme og opleve i indre by i København hvor vi skaber lys og god stemning i det mørke. Vores program 2023 kan du finde nedenfor. Vi glæder os til at se jer!</p> 
+     <a class="box button" href="/program">Læs Mere</a>
     </div>
     </div>
 </article>
@@ -23,6 +24,7 @@
     <div class="text2">
         <h2>OPEN CALL TIL COPENHAGEN LIGHT FESTIVAL</h2> 
         <p>Har du et lysværk, en lysinstallation eller en lysoplevelse, som du ønsker skal blive en del af Copenhagen Light Festival, kan du sende det ind under vores Open call.</p> 
+        <a class="box button" href="#">Læs Mere</a>
     </div>
     </div>
 </article>
@@ -87,6 +89,12 @@ img {
 
  }
 
+ .button, .box{
+        padding: 13px 30px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
  /*web*/
 
  @media (min-width: 800px){
@@ -138,6 +146,52 @@ text-decoration: none;
 .grid:nth-child(odd) .text, .text2 {
     order: -1;
 }
+
+
+
+
+.button{
+        justify-content: center;
+        align-items: center;
+        padding: 13px 43px;
+        text-decoration: none;
+        background-color: #D9D9D9;
+        border-radius: 25px;
+        font-size: 16px;
+        color: #252525;  
+        z-index: 2;
+        width: 150px;
+        height: 45px;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    
+    
+    }
+    .box {
+        position: relative;
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 25px; 
+        padding: 2px; 
+        background:linear-gradient(90deg,#F54D48,#C55790,#8A63E8,#438CBF,#4EB3B6); 
+       -webkit-mask: /*webkit gør at der kan være indhold i .box og at der kan ses via contect-box og ved mask composite*/ 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+    }
+    .button:hover{
+        background-color: #252525;
+        color: #D9D9D9; 
+        scale:1.08;
+    }
+
 }
+
 
 </style>
