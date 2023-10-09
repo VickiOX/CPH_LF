@@ -20,6 +20,8 @@ console.log(data);
 
 <style>
 
+@media (min-width: 800px){
+
     #myBtnContainer{
         margin-left: 265px;
         margin-top: 80px;
@@ -42,5 +44,23 @@ console.log(data);
     background: linear-gradient(270deg, rgba(161, 86, 203, 0.3) 7.29%, rgba(199, 75, 147, 0.3) 47.92%, rgba(78, 179, 182, 0.3) 88.02%);
   
   }
+}
+
+@media (max-width: 800px){
+   
+    #myBtnContainer{
+        display: none;
+    }
+  /* Style the buttons */
+  .btn {
+   display: none;
+  }
   
+  /* Add a light background on mouse-over */
+  .btn:hover {
+    display: none;
+  
+  }
+
+}
 </style>
