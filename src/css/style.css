@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+main {
+  background-image: url(/public/Stjerner.png);
+}
+
 h1,
 h2,
 h3,
