@@ -3,13 +3,13 @@ import "../css/style.css";
 const {data} = Astro.props;
 ---
 
-<a href={`produktListe/${data.slug}`}>
+<a href={`produktliste/${data.slug}`}>
 <article>
     <img src={data.imgArtist}/>
 
     <div class="box">
         <h1>{data.titel}</h1>
-        <a class="button" href="/info_artwork">Læs mere</a>
+        <a class="button" href="#">Læs mere</a>
     </div>
 </article> 
 </a>
