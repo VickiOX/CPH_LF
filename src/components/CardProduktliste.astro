@@ -9,7 +9,7 @@ const {data} = Astro.props;
 
     <div class="box">
         <h1>{data.titel}</h1>
-        <div class="button">Læs mere</div>
+        <div class="button box2">Læs mere</div>
     </div>
 </article> 
 </a>
@@ -17,19 +17,63 @@ const {data} = Astro.props;
 <style>
    @media (min-width: 800px){
 
+    .button{
+          justify-content: center;
+          align-items: center;
+          padding: 13px 43px;
+          text-decoration: none;
+          background-color: #D9D9D9;
+          border-radius: 25px;
+          font-size: 16px;
+          color: #252525;  
+          z-index: 2;
+          width: 150px;
+          height: 45px;
+          margin-left: 110px;
+          margin-bottom: 10px;
+      }
+
+
+      .box2 {
+          position: relative;
+          width: 150px;
+          height: 45px;
+          cursor: pointer;
+      }
+      .box2::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 25px; 
+          padding: 2px; 
+          background:linear-gradient(90deg,#F54D48,#C55790,#8A63E8,#438CBF,#4EB3B6); 
+         -webkit-mask: /*webkit gør at der kan være indhold i .box og at der kan ses via contect-box og ved mask composite*/ 
+              linear-gradient(#fff 0 0) content-box, 
+              linear-gradient(#fff 0 0);
+              mask-composite: exclude;
+      }
+
+      .button:hover{
+          background-color: #252525;
+          color: #D9D9D9; 
+          scale:1.08;
+      }
+      
+
+
     article{
         width: 369px;
         margin-top: 60px;
     }
     .box{
         border: 0.5px solid #181818;
-        background: #F2F2F2;
+        background: #181818;
         margin-top: -10px;
         padding-bottom: 20px;
     }
 
     h1{
-        color: var(--text-color-2, #000);
+        color: white;
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 25px;
@@ -40,30 +84,11 @@ const {data} = Astro.props;
     a{
         padding: 13px 43px;
         text-decoration: none;}
-   .button {
-        border-radius: 25px;
-        background: linear-gradient(270deg, #4EB3B6 -21.53%, #438CBF 21.38%, #8A63E8 52.97%, #C55790 86.86%, #F54D48 116.37%);
-        border: none;
-        border-radius: 25px;
-        font-size: 16px;
-        color: #D9D9D9;
-        z-index: 2;
-        width: 150px;
-        height: 45px;
-        margin: 20%;
-        justify-content: center;
-        margin-left: 110px;
-        margin-bottom: 20px;
-        text-decoration: none;
-    }
 
     img{
         max-width: 100%;
         border: 0.5px solid #181818;
         }
- :hover.button {
-        background: #000;
-    }
 }
     @media (max-width: 800px){
         article{
@@ -75,7 +100,7 @@ const {data} = Astro.props;
     }
     .box{
         border: 0.5px solid #181818;
-        background: #F2F2F2;
+        background: #181818;
         height: 100px;
         margin-top: -10px;
     }
@@ -95,7 +120,7 @@ const {data} = Astro.props;
     }
 
     h1{
-        color: var(--text-color-2, #000);
+        color: white;
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
         font-style: normal;
