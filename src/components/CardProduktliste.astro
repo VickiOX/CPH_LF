@@ -9,7 +9,7 @@ const {data} = Astro.props;
 
     <div class="box">
         <h1>{data.titel}</h1>
-        <a class="button" href="#">Læs mere</a>
+        <div class="button">Læs mere</div>
     </div>
 </article> 
 </a>
@@ -55,7 +55,7 @@ const {data} = Astro.props;
         max-width: 100%;
         border: 0.5px solid #181818;
         }
- a:hover.button {
+ :hover.button {
         background: #000;
     }
     @media (max-width: 800px){
@@ -73,14 +73,18 @@ const {data} = Astro.props;
         margin-top: -10px;
     }
     .button {
-        border-radius: 25px;
+        border-radius: 20px;
         background: linear-gradient(270deg, #4EB3B6 -21.53%, #438CBF 21.38%, #8A63E8 52.97%, #C55790 86.86%, #F54D48 116.37%);
-        padding: 10px;
+        padding: 5px;
         justify-content: center;
-        margin-left: 45px;
+        margin-left: 40px;
+        margin-top: -1rem;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 15px;
         font-style: normal;
+        width: 100px;
+        height: 40px;
+ 
     }
 
     h1{
