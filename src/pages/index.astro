@@ -9,17 +9,33 @@ import CardForside from "../components/CardForside.astro";
    <img class="top" src="/public/imgs/top/top1.webp" alt="kunst">
    <img class="top2" src="/public/imgs/top/top1-1.webp" alt="kunst">
    <h1 class="titel">COPENHAGEN LIGHT FESTIVAL</h1>
+   <h2>Februar 2023</h2>
    
    <CardForside/>
 </MainLayout>
 
 <style>
-
+   @media (max-width: 800px) {
+ h2{
+      font-size: 25px;
+      display: grid;
+      place-items: center;
+      margin-top: -10px;
+   }
+}
 @media (min-width: 800px) {
    .titel {
       width: 891px;
       height: 85px;
       margin-left: 330px;
+      margin-top: 80px;
+   }
+
+   h2{
+      font-size: 35px;
+      display: grid;
+      place-items: center;
+      padding-top: 20px;
    }
 
 }
