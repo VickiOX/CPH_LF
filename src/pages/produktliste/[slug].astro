@@ -15,6 +15,11 @@ export async function getStaticPaths() {
   });
 }
 
+import MainLayout from "../../layouts/MainLayout.astro";
+import "../../css/style.css";
 ---
 
-<h1>underside</h1>
+<MainLayout>
+  <h1>underside</h1>
+
+</MainLayout>
