@@ -29,7 +29,7 @@ p {
 
 @media (min-width: 800px) {
   .top {
-    max-width: 100%;
+    width: 100%;
   }
 
   .top2 {
@@ -63,11 +63,11 @@ p {
 @media (max-width: 800px) {
   .top {
     display: none;
-    max-width: 100%;
+    width: 100%;
   }
 
   .top2 {
-    width: 410px;
+    width: 100%;
     height: 194px;
   }
 
