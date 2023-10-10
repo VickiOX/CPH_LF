@@ -1,7 +1,9 @@
 ---
-const {text, href} = Astro.props
+const {text, href, } = Astro.props;
 ---
 <a class="box button" href={href}>{text}</a>
+
+
 <style>
        .button{
         justify-content: center;
@@ -46,6 +48,7 @@ const {text, href} = Astro.props
         padding: 13px 30px;
         font-size: 14px;
         text-decoration: none;
+        display: none;
     }
    }
 </style>

@@ -24,7 +24,7 @@ import Buttons from "./Buttons.astro";
     <div class="text2">
         <h2>OPEN CALL TIL COPENHAGEN LIGHT FESTIVAL</h2> 
         <p>Har du et lysværk, en lysinstallation eller en lysoplevelse, som du ønsker skal blive en del af Copenhagen Light Festival, kan du sende det ind under vores Open call.</p> 
-        <Buttons text="Læs Mere" href="/program"/>
+        <Buttons  text="Læs Mere" href="/program"/>
     </div>
     </div>
 </article>
@@ -34,6 +34,7 @@ import Buttons from "./Buttons.astro";
 
  /*mobile*/
 @media (max-width: 800px) {
+  
 .text p, .text2 p {
     display: none;
 }
@@ -98,6 +99,8 @@ img {
  /*web*/
 
  @media (min-width: 800px){
+
+
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
