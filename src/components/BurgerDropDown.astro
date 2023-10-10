@@ -4,10 +4,15 @@ import "../css/style.css";
 
 <div class="burger_nav">
     <div class="nav_bar">
+        <span class="color_line"></span>
         <a class="navlink" href="/">HJEM</a>
+        <span class="color_line"></span>
         <a class="navlink" href="/program">PROGRAM</a>
+        <span class="color_line"></span>
         <a class="navlink" href="/past">TIDLIGERE FESTIVALER</a>
+        <span class="color_line"></span>
         <a class="navlink" href="/about_us">OM OS</a>
+        <span class="color_line"></span>
     </div>
 </div>
 
@@ -43,11 +48,12 @@ import "../css/style.css";
 
             .navlink{
                 padding: 40px 40px 40px 65px;
-                border-top: white 2px solid;
             }
 
-            .nav_bar:last-child{
-                border-bottom: white 2px solid;
+            .color_line{
+                max-width: 100%;
+                height: 2px;
+                background: linear-gradient(270deg, #4EB3B6 -21.53%, #438CBF 21.38%, #8A63E8 52.97%, #C55790 86.86%, #F54D48 116.37%);
             }
 
         }
