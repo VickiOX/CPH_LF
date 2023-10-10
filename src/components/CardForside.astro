@@ -24,7 +24,7 @@ import Buttons from "./Buttons.astro";
     <div class="text2">
         <h2>OPEN CALL TIL COPENHAGEN LIGHT FESTIVAL</h2> 
         <p>Har du et lysværk, en lysinstallation eller en lysoplevelse, som du ønsker skal blive en del af Copenhagen Light Festival, kan du sende det ind under vores Open call.</p> 
-        <Buttons text="Læs Mere" href="/program"/>
+        <Buttons class="btn" text="Læs Mere" href="/program"/>
     </div>
     </div>
 </article>
@@ -37,7 +37,9 @@ import Buttons from "./Buttons.astro";
 .text p, .text2 p {
     display: none;
 }
-
+.btn{
+    display: none;
+}
 .text h2 {
     padding: 1rem;
       background: #181818;
@@ -68,7 +70,6 @@ import Buttons from "./Buttons.astro";
         font-weight:lighter;
         line-height: normal;
 }
-
 .grid {
     display: grid;
         width: 430px;
@@ -112,7 +113,6 @@ img {
         padding: 10px;
         margin-left: 120px;
 }
-
 img {
     border-radius: 10px;
  width: 191%;
@@ -162,7 +162,7 @@ text-decoration: none;
         margin-left: 0px;
         margin-bottom: 20px;
     
-    
+
     }
     .box {
         position: relative;
