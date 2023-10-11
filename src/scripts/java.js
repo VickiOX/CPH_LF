@@ -6,7 +6,7 @@ burgerMenu.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
-document.querySelector(".navlink").addEventListener("click", remove);
+document.querySelector(".nav_link").addEventListener("click", remove);
 
 function remove() {
   burgerMenu.classList.remove("active");
