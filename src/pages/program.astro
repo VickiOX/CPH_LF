@@ -3,6 +3,7 @@ import CardProduktliste from "../components/CardProduktliste.astro";
 import "../css/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Category from "../components/Category.astro";
+import Shelf from "../components/Shelf.astro";
 
 const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
 {
@@ -18,37 +19,54 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF",
 <img class="top2" src="/public/imgs/top/top4-1.webp" alt="kunst">
 
     <h1 class="titel">PROGRAM 2023</h1>
-
-<Category/>
-
-    <section class="programListe">
+<section class="styling_program_section">
+    <Category/>
+    <section class="grid_program_card">
         {
         data.map((produktListe) => {
             return  <CardProduktliste data={produktListe}/>;
         })
         }
     </section>
+</section>
 </MainLayout>
 
 
 <style>
     @media (min-width: 800px){
-    .programListe{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin-left: -3.8rem;
-        padding: 100px;
-        margin-top: 20px;
+
+        .styling_program_section{
+            max-width: 1600px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 70px;
+            margin-bottom: 70px;
         }
 
-    
+        .grid_program_card{
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 450px);
+            gap:2rem;
+            justify-content: center;
+        }
     }
 
-    @media (max-width: 800px){
-        .programListe{
-        display: grid;
-        grid-template-columns:1fr 1fr;
-        margin: 1rem;
+    @media (max-width: 900px){
+        .styling_program_section{
+            max-width: 800px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 70px;
+            margin-bottom: 70px;
+        }
+
+        .grid_program_card{
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 450px);
+            gap:2rem;
+            justify-content: center;
         }
     }
 

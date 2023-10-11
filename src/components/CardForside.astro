@@ -4,34 +4,30 @@ import Direction from "../components/Direction.astro";
 ---
 
 
-<article>   
-    <div class="grid"> 
-    <div>
-        <img src="imgs/kunst/Waves2.webp" alt="">
-    </div>
-    <div class="text">
-        <a href="/program"><h2>PROGRAM 2023</h2></a>
-        <p>Vores program er fyldt med spændende ny lys kunst, som du og din familie kan komme og opleve i indre by i København hvor vi skaber lys og god stemning i det mørke. Vores program 2023 kan du finde nedenfor. Vi glæder os til at se jer!</p> 
-     <Buttons text="Læs Mere" href="/program"/>
-    </div>
-    </div>
+<article class="grid">   
+        <div>
+            <img class="card_index_img" src="imgs/kunst/Waves2.webp" alt="">
+        </div>
+        <div class="text">
+            <a href="/program"><h2>PROGRAM 2023</h2></a>
+            <p>Vores program er fyldt med spændende ny lys kunst, som du og din familie kan komme og opleve i indre by i København hvor vi skaber lys og god stemning i det mørke. Vores program 2023 kan du finde nedenfor. Vi glæder os til at se jer!</p> 
+        <Buttons text="Læs Mere" href="/program"/>
+        </div>
 </article>
 
 <article>
     <Direction>
 </article>
 
-<article>   
-    <div class="grid"> 
-    <div>
-        <img src="imgs/kunst/Tree-Dance.webp" alt="">
-    </div>
-    <div class="text2">
-        <h2>OPEN CALL TIL COPENHAGEN LIGHT FESTIVAL</h2> 
-        <p>Har du et lysværk, en lysinstallation eller en lysoplevelse, som du ønsker skal blive en del af Copenhagen Light Festival, kan du sende det ind under vores Open call.</p> 
-        <Buttons text="Læs Mere" href="/program"/>
-    </div>
-    </div>
+<article class="grid">   
+        <div>
+            <img class="card_index_img" src="imgs/kunst/Tree-Dance.webp" alt="">
+        </div>
+        <div class="text2">
+            <h2>OPEN CALL TIL COPENHAGEN LIGHT FESTIVAL</h2> 
+            <p>Har du et lysværk, en lysinstallation eller en lysoplevelse, som du ønsker skal blive en del af Copenhagen Light Festival, kan du sende det ind under vores Open call.</p> 
+            <Buttons text="Læs Mere" href="/program"/>
+        </div>
 </article>
 
 
@@ -49,10 +45,9 @@ import Direction from "../components/Direction.astro";
 .text h2 {
     padding: 1rem;
       background: #181818;
-      margin-top: -9rem;
+      margin-top: -4rem;
       margin-left: 0rem;
       position: absolute;
-
       color: #FFF;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 15px;
@@ -64,7 +59,7 @@ import Direction from "../components/Direction.astro";
 .text2 h2 {
     padding: 1rem;
       background: #181818;
-      margin-top: -10rem;
+      margin-top: -5rem;
       margin-left: 0rem;
       position: absolute;
       width: 300px;
@@ -78,18 +73,17 @@ import Direction from "../components/Direction.astro";
 }
 .grid {
     display: grid;
-        width: 430px;
-        height: 540px;
+        width: 360px;
+        height: 360px;
         padding: 10px;
-        padding-top: 40px;
-        margin-left: 10px;
-        margin-top: 1.5rem;
-        margin-bottom: -10rem;
-        position: relative;
-       justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        justify-content: center;
 }    
 
-img {
+.card_index_img {
     width: 350px;
     height: 350px;
 }
@@ -110,16 +104,15 @@ img {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
-    margin: 5rem;
     place-items: center;
-
-      box-sizing: border-box; 
-      border-radius: 10px;
-      background: #181818;
-      width: 1205px;
-        height: 560px;
-        padding: 10px;
-        margin-left: 120px;
+    box-sizing: border-box; 
+    border-radius: 10px;
+    background: #181818;
+    width: 1205px;
+    height: 560px;
+    padding: 10px;
+    margin-top: 70px;
+    margin-bottom: 70px;
 }
 img {
     border-radius: 10px;

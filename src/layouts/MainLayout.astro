@@ -26,7 +26,7 @@ import Footer from "../components/Footer.astro";
 			<slot />
 		</main>
         <footer>
-            <img src="../../footer_by.svg" alt="">
+            <img class="img_footer_by" src="../../footer_by.svg" alt="">
             {title=="CPH Light Festival"&&<FoundersIFooter/>}
             <Footer/>
         </footer>
@@ -41,7 +41,7 @@ import Footer from "../components/Footer.astro";
         background: linear-gradient(180deg, rgba(6,13,19,1) 8%, rgba(7,26,40,1) 32%, rgba(16,58,83,1) 66%, rgba(26,109,150,1) 83%, rgba(91,166,198,1) 93%);
     }
 
-    img{
+    .img_footer_by{
         width: 100%;
         margin-bottom: -5px;
     }

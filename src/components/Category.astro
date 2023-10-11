@@ -23,9 +23,8 @@ console.log(data);
 @media (min-width: 800px){
 
     #myBtnContainer{
-        margin-left: 265px;
-        margin-top: 80px;
-        margin-bottom: -170px;
+        display: flex;
+        justify-content: center;
     }
   /* Style the buttons */
   .btn {
@@ -49,16 +48,27 @@ console.log(data);
 @media (max-width: 800px){
    
     #myBtnContainer{
-        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
   /* Style the buttons */
-  .btn {
-   display: none;
-  }
+    .btn {
+      border-radius: 12px;
+      border: 0.1px solid #02A3B4;
+      background: linear-gradient(270deg, rgba(161, 86, 203, 0.70) 7.29%, rgba(199, 75, 147, 0.70) 47.92%, rgba(78, 179, 182, 0.70) 88.02%);
+      padding: 20px;
+      width: 300px;
+      color: #ddd;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
   
   /* Add a light background on mouse-over */
-  .btn:hover {
-    display: none;
+  
+  .btn:active {
+    background: linear-gradient(270deg, rgba(161, 86, 203, 0.3) 7.29%, rgba(199, 75, 147, 0.3) 47.92%, rgba(78, 179, 182, 0.3) 88.02%);
   
   }
 
