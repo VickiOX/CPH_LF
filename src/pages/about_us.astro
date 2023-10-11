@@ -18,28 +18,36 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF-b
     <img class="top2" src="/public/imgs/top/top3-1.webp" alt="kunst">
 
     <h1 class="titel">OM OS</h1>
-   
-    <h2>VORES VISION</h2>
-    <p>Copenhagen Light Festival er en non-profit forening, som er grundlagt af Tivoli, Stromma, VNR.tv og Louis Poulsen / D Studio. Med København som kulisse søger foreningen at introducere og præsentere lyskunst i interaktion med byens særpræg, mørke og æstetik.</p>
-
-    <Shelf title="BESTYRELSEN">
-        {data.map(membersList =>{
-            return <CardBordMembers membersData={membersList}/>
-        })
-        }
-    </Shelf>
-
-    <h2>STIFTENDE PARTNERE</h2>
-    <article>
-        <img src="../../tivoli.webp" alt="tivoli logo">
-        <img src="../../stromma.webp" alt="stromma logo">
-        <img src="../../d-studio.webp" alt="D studio logo">
-        <img src="../../vnrtv.webp" alt="vnr.tv logo">
-    </article>
+    
+    <section class="section_style">
+        <h2>VORES VISION</h2>
+        <div class="text">
+            <p>Copenhagen Light Festival er en non-profit forening, som er grundlagt af Tivoli, Stromma, VNR.tv og Louis Poulsen / D Studio. Med København som kulisse søger foreningen at introducere og præsentere lyskunst i interaktion med byens særpræg, mørke og æstetik.</p>
+        </div>
+    </section>
+    <section class="section_style">
+        
+            <Shelf title="BESTYRELSEN">
+                {data.map(membersList =>{
+                    return <CardBordMembers membersData={membersList}/>
+                })
+                }
+            </Shelf>
+        
+    </section>
+    <section class="section_style">
+        <h2>STIFTENDE PARTNERE</h2>
+        <article>
+            <img class="founding_partners" src="../../tivoli.webp" alt="tivoli logo">
+            <img class="founding_partners" src="../../stromma.webp" alt="stromma logo">
+            <img class="founding_partners" src="../../d-studio.webp" alt="D studio logo">
+            <img class="founding_partners" src="../../vnrtv.webp" alt="vnr.tv logo">
+        </article>
+    </section>
 </MainLayout>
 
 <style> 
-    article img{
+    .founding_partners{
             max-height: 150px;
         }
 
@@ -47,9 +55,10 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF-b
         display: flex;
     }
 
-    p{
-        width: 330px;
-        margin-left: 50px;
+    .text{
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     h2{
@@ -61,4 +70,64 @@ const data = await fetch("https://jtxxnipvadkmsqhjnusc.supabase.co/rest/v1/CLF-b
         justify-content: space-between;
         align-items: center;
     }
+
+    .section_style{
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        background-color: #181818;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+
+    @media screen and (max-width: 1250px){
+        
+        .section_style{
+        max-width: 750px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        background-color: #181818;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    .founding_partners{
+            max-height: 125px;
+        }
+
+
+    }
+
+   
+    @media screen and (max-width: 800px){
+        
+        .section_style{
+        max-width: 400px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        background-color: #181818;
+        padding: 25px;
+        border-radius: 10px;
+    }
+
+    .text{
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .founding_partners{
+            max-height: 75px;
+        }
+
+
+    }
+
 </style>
