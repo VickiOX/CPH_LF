@@ -34,6 +34,7 @@ p {
 
   .top2 {
     display: none;
+    width: 100%;
   }
 
   .titel {
@@ -67,8 +68,7 @@ p {
   }
 
   .top2 {
-    margin-top: 150px;
-    width: 450px;
+    width: 100%;
     height: 194px;
   }
 
